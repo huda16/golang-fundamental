@@ -4,5 +4,6 @@ func main() {
     
 	// integer()
 	// float()
-	alias()
+	// alias()
+	boolean()
 }
