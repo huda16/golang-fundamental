@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func integer() {
     // Declare and initialize integers of different types
     var a int = 42          // Default int (usually 64 bits on 64-bit systems)
     var b int8 = 12         // 8-bit signed integer
