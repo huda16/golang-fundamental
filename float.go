@@ -4,16 +4,16 @@ import (
 	"fmt"
 )
 
-func float() {
-    // Declare and initialize floating-point numbers
-	var a float32 = 3.14                          // 32-bit floating-point
-	var b float64 = 2.718281828459045             // 64-bit floating-point
+func Float() {
+	// Declare and initialize floating-point numbers
+	var a float32 = 3.14              // 32-bit floating-point
+	var b float64 = 2.718281828459045 // 64-bit floating-point
 
 	// Perform some basic operations with floating-point numbers
-	sum := a + float32(b)                         // Sum of a and b, converting b to float32
-	product := a * float32(b)                     // Product of a and b, converting b to float32
-	difference := b - float64(a)                  // Difference, converting a to float64
-	quotient := b / float64(a)                    // Quotient, converting a to float64
+	sum := a + float32(b)        // Sum of a and b, converting b to float32
+	product := a * float32(b)    // Product of a and b, converting b to float32
+	difference := b - float64(a) // Difference, converting a to float64
+	quotient := b / float64(a)   // Quotient, converting a to float64
 
 	// Print results for floating-point numbers
 	fmt.Println("Float32 a:", a)
@@ -24,16 +24,16 @@ func float() {
 	fmt.Println("Quotient (b / a):", quotient)
 
 	// Declare and initialize complex numbers
-	var c complex64 = 1 + 2i                       // 32-bit complex number
-	var d complex128 = 3 + 4i                      // 64-bit complex number
+	var c complex64 = 1 + 2i  // 32-bit complex number
+	var d complex128 = 3 + 4i // 64-bit complex number
 
 	// Perform basic operations with complex numbers
-	complexSum := c + complex64(d)                // Sum of c and d, converting d to complex64
-	complexProduct := c * complex64(d)            // Product of c and d, converting d to complex64
+	complexSum := c + complex64(d)     // Sum of c and d, converting d to complex64
+	complexProduct := c * complex64(d) // Product of c and d, converting d to complex64
 
 	// Combining floating-point and complex numbers
 	combinedSum := complex(float32(a), 0) + c     // Combine float32 a with complex number c
-	combinedProduct := complex(float64(b), 0) * d  // Combine float64 b with complex number d
+	combinedProduct := complex(float64(b), 0) * d // Combine float64 b with complex number d
 
 	// Print results for complex numbers
 	fmt.Println("Complex64 c:", c)
