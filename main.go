@@ -6,5 +6,7 @@ func main() {
 	// Float()
 	// Alias()
 	// Boolean()
-	ReassignVariable()
+	// ReassignVariable()
+	For()
+	Iota()
 }
