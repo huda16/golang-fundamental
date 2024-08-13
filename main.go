@@ -5,5 +5,6 @@ func main() {
 	// Integer()
 	// Float()
 	// Alias()
-	Boolean()
+	// Boolean()
+	ReassignVariable()
 }
