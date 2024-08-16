@@ -7,6 +7,7 @@ func main() {
 	// Alias()
 	// Boolean()
 	// ReassignVariable()
-	For()
-	Iota()
+	// For()
+	// Iota()
+	DeferAndExit()
 }
