@@ -1,0 +1,22 @@
+package main
+
+import (
+	"fmt"
+)
+
+func String() {
+	// String menggunakan tanda petik dua
+	str1 := "Ini adalah string menggunakan petik dua."
+	fmt.Println("String 1:", str1)
+
+	// String dengan karakter newline dan tab
+	str2 := "Ini adalah string\nmengandung newline\n\tdan tab."
+	fmt.Println("String 2:", str2)
+
+	// String menggunakan backticks
+	str3 := `Ini adalah string menggunakan backticks.
+Karakter newline dan tab tidak di-escape di sini:
+\tTab
+\nNewline`
+	fmt.Println("String 3:", str3)
+}
