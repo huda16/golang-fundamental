@@ -1,5 +1,7 @@
 package main
 
+import "golang-fundamental/file"
+
 func main() {
 
 	// Integer()
@@ -9,5 +11,17 @@ func main() {
 	// ReassignVariable()
 	// For()
 	// Iota()
-	DeferAndExit()
+	// DeferAndExit()
+	// Error()
+	// CustomError()
+	// ErrorExample()
+
+	// file
+	// file.Open()
+	// file.Write()
+	// file.Append()
+	file.Read()
+	// file.ReadPerLine()
+	file.Metadata()
+	file.Delete()
 }
