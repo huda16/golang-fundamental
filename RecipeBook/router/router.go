@@ -41,6 +41,9 @@ func StartServer() *gin.Engine {
 		recipeRouter.POST("/", controllers.CreateRecipe)
 		recipeRouter.PUT("/:recipeId", middlewares.RecipeAuthorization(), controllers.UpdateRecipe)
 		recipeRouter.DELETE("/:recipeId", middlewares.RecipeAuthorization(), controllers.DeleteRecipe)
+		recipeRouter.POST("/:recipeId/comments", controllers.CreateRecipeComment)	
+		recipeRouter.POST("/:recipeId/likes", controllers.CreateRecipeLike)
+		recipeRouter.POST("/:recipeId/follows", controllers.CreateRecipeFollow)
 	}
 
 	likeRouter := r.Group("/likes")
