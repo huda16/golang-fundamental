@@ -20,7 +20,7 @@ import (
 // @Produce json
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
-// @Success 200 {object} models.Recipe "OK"
+// @Success 200 {object} models.Recipes "OK"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Router /recipes [get]
 func GetRecipe(c *gin.Context) {
@@ -74,7 +74,7 @@ func GetRecipe(c *gin.Context) {
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
 // @param helpers.RecipeInput body helpers.RecipeInput true "create recipe"
-// @Success 201	{object} models.Recipe "Created"
+// @Success 201	{object} models.Recipes "Created"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
@@ -118,7 +118,7 @@ func CreateRecipe(c *gin.Context) {
 // @param Authorization header string true "Authorization"
 // @Param recipeId path int true "ID of the recipe to be updated"
 // @param helpers.RecipeInput body helpers.RecipeInput true "update recipe"
-// @Success 200	{object} models.Recipe "OK"
+// @Success 200	{object} models.Recipes "OK"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
@@ -197,7 +197,7 @@ func DeleteRecipe(c *gin.Context) {
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
 // @Param recipeId path int true "ID of the recipe"
-// @Success 200 {object} models.Recipe "OK"
+// @Success 200 {object} models.Recipes "OK"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
@@ -214,12 +214,13 @@ func HelloRecipe(g *gin.Context) {
 // @Produce json
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
-// @param helpers.RecipeInput body helpers.RecipeInput true "create recipe"
-// @Success 201	{object} models.Recipe "Created"
+// @Param recipeId path int true "ID of the recipe"
+// @param helpers.RecipeCommentInput body helpers.RecipeCommentInput true "create recipe comment"
+// @Success 201	{object} models.Comments "Created"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
-// @Router /recipes [post]
+// @Router /recipes/{recipeId}/comments [post]
 func CreateRecipeComment(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -251,7 +252,7 @@ func CreateRecipeComment(c *gin.Context) {
 	c.JSON(http.StatusCreated, Comment)
 }
 
-// AddingRecipe godoc
+// AddingRecipeLike godoc
 // @Summary Post details for a given Id
 // @Description Post details of recipe corresponding to the input Id
 // @Tags Recipes
@@ -259,12 +260,12 @@ func CreateRecipeComment(c *gin.Context) {
 // @Produce json
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
-// @param helpers.RecipeInput body helpers.RecipeInput true "create recipe"
-// @Success 201	{object} models.Recipe "Created"
+// @Param recipeId path int true "ID of the recipe"
+// @Success 201	{object} models.Likes "Created"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
-// @Router /recipes [post]
+// @Router /recipes/{recipeId}/likes [post]
 func CreateRecipeLike(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -309,7 +310,7 @@ func CreateRecipeLike(c *gin.Context) {
 	c.JSON(http.StatusCreated, Like)
 }
 
-// AddingRecipe godoc
+// AddingRecipeFollow godoc
 // @Summary Post details for a given Id
 // @Description Post details of recipe corresponding to the input Id
 // @Tags Recipes
@@ -317,12 +318,12 @@ func CreateRecipeLike(c *gin.Context) {
 // @Produce json
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
-// @param helpers.RecipeInput body helpers.RecipeInput true "create recipe"
-// @Success 201	{object} models.Recipe "Created"
+// @Param recipeId path int true "ID of the recipe"
+// @Success 201	{object} models.Likes "Created"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
-// @Router /recipes [post]
+// @Router /recipes/{recipeId}/follows [post]
 func CreateRecipeFollow(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)

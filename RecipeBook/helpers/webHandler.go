@@ -24,19 +24,30 @@ type LoginResponse struct {
 }
 
 type CommentInput struct {
+	Message  string `json:"message" valid:"required"`
+	RecipeID uint   `json:"recipe_id" valid:"required"`
+}
+
+type FollowInput struct {
+	FollowedID uint `json:"followed_id" valid:"required"`
+}
+
+type LikeInput struct {
+	RecipeID uint `json:"recipe_id" valid:"required"`
+}
+
+type RecipeCommentInput struct {
 	Message string `json:"message" valid:"required"`
-	PhotoID uint   `json:"photo_id" valid:"required"`
 }
 
-type PhotoInput struct {
-	Title    string `json:"title" valid:"required"`
-	Caption  string `json:"caption"`
-	PhotoUrl string `json:"photo_url" valid:"required"`
-}
-
-type SocialMediaInput struct {
-	Name           string `json:"name" valid:"required"`
-	SocialMediaUrl string `json:"social_media_url" valid:"required"`
+type RecipeInput struct {
+	Title       string `json:"title" valid:"required"`
+	Description string `json:"description" valid:"required"`
+	Ingredients string `json:"ingredients" valid:"required"`
+	Steps       string `json:"steos" valid:"required"`
+	PictureUrl  string `json:"picture_url" valid:"required"`
+	Category    string `json:"category"`
+	Tags        string `json:"tags"`
 }
 
 type DeleteResponse struct {

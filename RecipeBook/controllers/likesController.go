@@ -20,7 +20,7 @@ import (
 // @Produce json
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
-// @Success 200 {object} models.Like "OK"
+// @Success 200 {object} models.Likes "OK"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Router /likes [get]
 func GetLike(c *gin.Context) {
@@ -74,7 +74,7 @@ func GetLike(c *gin.Context) {
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
 // @param helpers.LikeInput body helpers.LikeInput true "create like"
-// @Success 201	{object} models.Like "Created"
+// @Success 201	{object} models.Likes "Created"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
@@ -151,7 +151,7 @@ func DeleteLike(c *gin.Context) {
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
 // @Param likeId path int true "ID of the like"
-// @Success 200 {object} models.Like "OK"
+// @Success 200 {object} models.Likes "OK"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"

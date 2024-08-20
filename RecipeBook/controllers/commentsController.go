@@ -20,7 +20,7 @@ import (
 // @Produce json
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
-// @Success 200 {object} models.Comment "OK"
+// @Success 200 {object} models.Comments "OK"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Router /comments [get]
 func GetComment(c *gin.Context) {
@@ -74,7 +74,7 @@ func GetComment(c *gin.Context) {
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
 // @param helpers.CommentInput body helpers.CommentInput true "create comment"
-// @Success 201	{object} models.Comment "Created"
+// @Success 201	{object} models.Comments "Created"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
@@ -118,7 +118,7 @@ func CreateComment(c *gin.Context) {
 // @param Authorization header string true "Authorization"
 // @Param commentId path int true "ID of the comment to be updated"
 // @param helpers.CommentInput body helpers.CommentInput true "update comment"
-// @Success 200	{object} models.Comment "OK"
+// @Success 200	{object} models.Comments "OK"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
@@ -196,7 +196,7 @@ func DeleteComment(c *gin.Context) {
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
 // @Param commentId path int true "ID of the comment"
-// @Success 200 {object} models.Comment "OK"
+// @Success 200 {object} models.Comments "OK"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"

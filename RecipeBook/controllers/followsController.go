@@ -20,9 +20,9 @@ import (
 // @Produce json
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
-// @Success 200 {object} models.Follow "OK"
+// @Success 200 {object} models.Follows "OK"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
-// @Router /follow [get]
+// @Router /follows [get]
 func GetFollow(c *gin.Context) {
 	db := database.GetDB()
 	socialMedia := []models.Follows{}
@@ -74,11 +74,11 @@ func GetFollow(c *gin.Context) {
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
 // @param helpers.FollowInput body helpers.FollowInput true "create follow"
-// @Success 201	{object} models.Follow "Created"
+// @Success 201	{object} models.Follows "Created"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
-// @Router /follow [post]
+// @Router /follows [post]
 func CreateFollow(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)
@@ -121,7 +121,7 @@ func CreateFollow(c *gin.Context) {
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
-// @Router /follow/{followId} [delete]
+// @Router /follows/{followId} [delete]
 func DeleteFollow(c *gin.Context) {
 	db := database.GetDB()
 	followId, _ := strconv.Atoi(c.Param("followId"))
@@ -151,11 +151,11 @@ func DeleteFollow(c *gin.Context) {
 // @Security BearerAuth
 // @param Authorization header string true "Authorization"
 // @Param followId path int true "ID of the follow"
-// @Success 200 {object} models.Follow "OK"
+// @Success 200 {object} models.Follows "OK"
 // @Failure	401	{object} helpers.APIError "Unauthorized"
 // @Failure	400	{object} helpers.APIError "Bad Request"
 // @Failure	500	{object} helpers.APIError "Server Error"
-// @Router /follow/{followId} [get]
+// @Router /follows/{followId} [get]
 func HelloFollow(g *gin.Context) {
 	g.JSON(http.StatusOK, "helloworld")
 }
