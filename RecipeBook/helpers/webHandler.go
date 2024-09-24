@@ -5,6 +5,7 @@ type RegisterInput struct {
 	Email    string `json:"email"`
 	Password string `json:"password"`
 	Age      int    `json:"age"`
+	Bio      string `json:"bio"`
 }
 
 type RegisterResponse struct {

@@ -9,11 +9,7 @@ const docTemplate = `{
     "info": {
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
-        "termsOfService": "http://swagger.io/terms/",
-        "contact": {
-            "name": "API Support",
-            "email": "soberkoder@swagger.io"
-        },
+        "contact": {},
         "version": "{{.Version}}"
     },
     "host": "{{.Host}}",
@@ -1445,6 +1441,9 @@ const docTemplate = `{
                 "age": {
                     "type": "integer"
                 },
+                "bio": {
+                    "type": "string"
+                },
                 "email": {
                     "type": "string"
                 },
@@ -1644,12 +1643,12 @@ const docTemplate = `{
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "1.0",
-	Host:             "localhost:8080",
-	BasePath:         "/",
+	Version:          "",
+	Host:             "",
+	BasePath:         "",
 	Schemes:          []string{},
-	Title:            "RecipeBook API",
-	Description:      "This is a sample service for managing cars",
+	Title:            "",
+	Description:      "",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",
